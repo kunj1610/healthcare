@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+.client_section {
+    margin-top: 7%;
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+  
+  .client_taital {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .client_text {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .client_section_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+  
+  .client_left .client_img {
+    width: 300px;
+    height: 400px;
+}
+  
+  .client_right {
+    max-width: 500px;
+  }
+  
+  .distracted_text {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .lorem_text {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .quote_icon img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .carousel-control-prev {
+    left: 10px;
+  }
+  
+  .carousel-control-next {
+    right: 10px;
+  }
+  
+  .carousel-control-prev i,
+  .carousel-control-next i {
+    font-size: 24px;
+    color: white;
+  }
+  

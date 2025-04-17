@@ -1,0 +1,50 @@
+.form-container {
+  width: 60%;
+  margin: 40px 0px;
+  padding: 50px;
+  border-radius: 40px;
+  background-color: #e9ecef;
+}
+
+/* .register-form{
+width: 400px;
+} */
+
+#components-form-demo-register-patient-form .ant-btn {
+  margin-right: 8px;
+}
+.Formm{
+  border-radius: 20px;
+ 
+}
+.FORMIT{
+  position: relative;
+  margin-top: 20px;
+  right: 60px;
+  font-size: 20px;
+  
+}
+
+.INPUTT{
+ position: relative;
+ left: 8px;
+}
+
+.register-btn {
+  color: forestgreen;
+}
+
+.register-btn:hover{
+  color: forestgreen;  
+}
+
+.regist-btn
+{
+  color: white;
+  margin-top: 30px;
+}
+
+.regist-btn:hover{
+  color: white;  
+}
+
