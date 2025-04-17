@@ -1,0 +1,71 @@
+.news_section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .health_taital {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .health_text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* Card Styling */
+  .box_main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    min-height: 250px;  /* Ensures all cards have equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box_main:hover {
+    background-color:#16c79a;;
+    color: white;
+  }
+  
+  .icon_1 img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .daily_text, .daily_text_1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* CTA Button */
+  .getquote_bt {
+    margin-top: 30px;
+  }
+  
+  .getquote_bt a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #16c79a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  
+  .getquote_bt a:hover {
+    background:#16c79a;
+  }
+  

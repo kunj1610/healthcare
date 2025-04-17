@@ -1,0 +1,45 @@
+header {
+  height: 10%;
+  background-color: white;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header-container {
+  margin: 20px auto;
+}
+
+.header-appname {
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+
+.header-appname span {
+  margin: auto 5px;
+  font-size: 20px;
+}
+
+.header-author {
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 5%;
+    }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  header {
+    height: 5%;
+    
+  }
+}
+
+/* Large devices (small laptops, etc.) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  header {
+    height: 5%;
+    }
+}
