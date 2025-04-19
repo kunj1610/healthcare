@@ -1,18 +1,23 @@
+// Import necessary dependencies from React and React-Bootstrap
 import React from "react";
-
 import { Row, Col, Form } from "react-bootstrap";
 
+// Import custom styles for the profile component
 import "../styles/profile.css";
 
+// UserProfile component that displays user information in a form layout
 function UserProfile(props) {
   return (
+    // Main container row
     <Row>
+      {/* Title row */}
       <Row>
         <Col sm={4} className="profile-info-title">
           <span>{props.title}</span>
         </Col>
         <Col sm={8}></Col>
       </Row>
+      {/* Full Name row */}
       <Row>
         <Col sm={4} className="profile-info-text">
           Full Name
@@ -26,6 +31,7 @@ function UserProfile(props) {
           />
         </Col>
       </Row>
+      {/* Ethereum Address row */}
       <Row>
         <Col sm={4} className="profile-info-text">
           Ethereum Address
@@ -43,4 +49,5 @@ function UserProfile(props) {
   );
 }
 
+// Export the UserProfile component for use in other parts of the application
 export default UserProfile;
