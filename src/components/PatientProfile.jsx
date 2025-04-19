@@ -1,3 +1,4 @@
+// Import necessary dependencies from React and other libraries
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Spinner } from "react-bootstrap";
 import { Divider } from "antd";
@@ -8,19 +9,24 @@ import { db } from "../firebase";
 import Cookies from "js-cookie";
 import PatientImage from "../assets/images/patient-avatar.png";
 
+// Component to display patient profile information
 const PatientProfile = () => {
+  // State to store patient data and loading status
   const [patientData, setPatientData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Effect hook to fetch patient data when component mounts
   useEffect(() => {
     const fetchPatientData = async () => {
       try {
+        // Get userID from cookies
         const userID = Cookies.get("userID");
         if (!userID) {
           console.error("User not authenticated");
           return;
         }
 
+        // Query Firestore for patient data
         const usersRef = collection(db, "User");
         const q = query(usersRef, where("uid", "==", userID), where("role", "==", "patient"));
         const querySnapshot = await getDocs(q);
@@ -40,6 +46,7 @@ const PatientProfile = () => {
     fetchPatientData();
   }, []);
 
+  // Define form fields with their labels, keys and icons
   const fields = [
     { label: "Full Name", key: "firstname", icon: <BiUser style={{ margin: "10px", fontSize: "22px" }} /> },
     { label: "Last Name", key: "lastname", icon: <BiUser style={{ margin: "10px", fontSize: "22px" }} /> },
@@ -55,6 +62,7 @@ const PatientProfile = () => {
     { label: "Chronic Diseases", key: "chronicDiseases", icon: <FaRegAddressCard style={{ margin: "10px", fontSize: "22px" }} /> },
   ];
 
+  // Show loading spinner while data is being fetched
   if (loading) {
     return (
       <Container className="text-center mt-5">
@@ -64,15 +72,18 @@ const PatientProfile = () => {
     );
   }
 
+  // Render patient profile form
   return (
     <Container>
       <Form>
+        {/* Header section with profile title and role */}
         <Row>
           <Col>
             <p style={{ fontSize: "25px", fontWeight: "bold", margin: "10px 0", color: "gray" }}>Profile</p>
             <p style={{ color: "#16c79a" }}>Patient</p>
           </Col>
         </Row>
+        {/* Avatar section with description */}
         <Row>
           <Col style={{ textAlign: "center" }}>
             <img src={PatientImage} alt="patient avatar" />
@@ -82,6 +93,7 @@ const PatientProfile = () => {
             </p>
           </Col>
         </Row>
+        {/* Patient information form fields */}
         <Row>
           <Col style={{ boxShadow: "#e2fad6 5px 5px 5px 5px", padding: "40px", backgroundColor: "#f7f7f7" }}>
             {fields.map((field) => (
@@ -102,4 +114,5 @@ const PatientProfile = () => {
   );
 };
 
+// Export the component
 export default PatientProfile;
