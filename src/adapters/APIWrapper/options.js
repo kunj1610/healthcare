@@ -1,3 +1,4 @@
+// Default options for getting all users
 export const getUsersOptions = {
     url: "http://localhost:8000/api/users",
     method: "GET",
@@ -7,6 +8,7 @@ export const getUsersOptions = {
     }
   };
   
+// Options for getting a single user by ID
 export const getUserOptions = (id) => {
     return {
         url: `http://localhost:8000/api/users/${id}`,
@@ -18,6 +20,7 @@ export const getUserOptions = (id) => {
     };
 };
 
+// Options for creating a new user with Ethereum address
 export const createUserOptions = (ethereumAddress) => {
     return {
         url: "http://localhost:8000/api/users",
@@ -30,6 +33,7 @@ export const createUserOptions = (ethereumAddress) => {
     };
 };
 
+// Options for deleting a user by ID
 export const deleteUserOptions = (id) => {
     return {
         url: `http://localhost:8000/api/users/${id}`,
@@ -41,6 +45,7 @@ export const deleteUserOptions = (id) => {
     };
 };
 
+// Options for generating user access credentials using passphrase
 export const generateUserAccessOptions = (userPassPhrase, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/access`,
@@ -53,6 +58,7 @@ export const generateUserAccessOptions = (userPassPhrase, id) => {
     };
 };
 
+// Options for listing objects/files for a user
 export const listObjectsOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/list`,
@@ -65,6 +71,7 @@ export const listObjectsOptions = (reqData, id) => {
     };
 };
 
+// Options for uploading identity verification documents
 export const uploadIdentityOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/upload/identity`,
@@ -77,6 +84,7 @@ export const uploadIdentityOptions = (reqData, id) => {
     };
 };
 
+// Options for uploading medical records
 export const uploadRecordOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/upload/record`,
@@ -89,6 +97,7 @@ export const uploadRecordOptions = (reqData, id) => {
     };
 };
 
+// Options for downloading a single object/file
 export const downloadObjectOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/download`,
@@ -101,6 +110,7 @@ export const downloadObjectOptions = (reqData, id) => {
     };
 };
 
+// Options for downloading multiple objects/files
 export const downloadObjectsOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/downloads`,
@@ -113,6 +123,7 @@ export const downloadObjectsOptions = (reqData, id) => {
     };
 };
 
+// Options for updating an object/file
 export const updateObjectOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/update`,
@@ -125,6 +136,7 @@ export const updateObjectOptions = (reqData, id) => {
     };
 };
 
+// Options for deleting a single object/file
 export const deleteObjectOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/delete`,
@@ -137,6 +149,7 @@ export const deleteObjectOptions = (reqData, id) => {
     };
 };
 
+// Options for deleting multiple objects/files
 export const deleteObjectSOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/deletes`,
@@ -149,6 +162,7 @@ export const deleteObjectSOptions = (reqData, id) => {
     };
 };
 
+// Options for sharing a single object/file
 export const shareObjectOptions = (reqData, id) => {
     return {
         url: `http://localhost:8000/api/users/${id}/share`,
@@ -161,6 +175,7 @@ export const shareObjectOptions = (reqData, id) => {
     };
 };
 
+// Options for sharing multiple objects/files
 export const shareObjectsOptions = (reqData, id) => {
 return {
     url: `http://localhost:8000/api/users/${id}/shares`,
@@ -173,6 +188,7 @@ return {
 };
 };
 
+// Options for revoking access to shared objects/files
 export const revokeAccessGrantOptions = (reqData, id) => {
 return {
     url: `http://localhost:8000/api/users/${id}/revoke`,
