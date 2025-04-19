@@ -1,13 +1,11 @@
+// Import necessary dependencies
 import React, { useEffect, useState } from "react";
-
-
 import Modal from "./Modal";
 import styled from "styled-components";
-
 import randomWords from "random-words";
-
 import { Checkbox } from "antd";
 
+// Styled components for responsive layout and styling
 const UserpassphraseContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -26,11 +24,11 @@ const UserpassphraseWrapper = styled.div`
 const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
-
   text-align: center;
   margin: 0 200px;
 `;
 
+// Row1 components for tab navigation
 const Row1 = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -54,7 +52,6 @@ const Row1SelectedLink = styled.p`
   font-size: 18px;
   font-weight: bold;
   color: #16c79a;
-
   border-bottom: 5px solid #16c79a;
 
   :hover {
@@ -71,12 +68,12 @@ const Row1Link = styled.p`
   }
 `;
 
+// Row2 components for displaying/entering passphrase
 const Row2 = styled.div`
   display: flex;
   flex-flow: row nowrap;
   background: rgba(128, 128, 128, 0.05);
   width: 100%;
-
   align-items: center;
   align-self: center;
   padding: 10px;
@@ -84,11 +81,11 @@ const Row2 = styled.div`
 
 const Row2Text = styled.p`
   font-size: 20px;
-
   padding: 20px;
   width: 700px;
 `;
 
+// Styled button for copying passphrase
 const Row2Btn = styled.button`
   align-items: center;
   appearance: button;
@@ -102,7 +99,6 @@ const Row2Btn = styled.button`
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
-
   font-size: 24px;
   line-height: 1.15;
   margin: 0;
@@ -124,6 +120,7 @@ const Row2Btn = styled.button`
   }
 `;
 
+// Row3 components for instructions and confirmation
 const Row3 = styled.div`
   display: flex;
   flex-direction: column;
@@ -155,6 +152,7 @@ const Row3CheckBoxText = styled.div`
   font-size: 20px;
 `;
 
+// Next button styling
 const Row4NextBtn = styled.button`
   align-items: center;
   background-color: #16c79a;
@@ -164,7 +162,6 @@ const Row4NextBtn = styled.button`
   cursor: pointer;
   display: inline-flex;
   fill: #16c79a;
-
   font-size: 22px;
   font-weight: 600;
   width: 100%;
@@ -211,6 +208,7 @@ const Row4NextBtn = styled.button`
   }
 `;
 
+// Input field for manual passphrase entry
 const InputPhrase = styled.textarea`
   border: none;
   height: 120px;
@@ -220,57 +218,52 @@ const InputPhrase = styled.textarea`
   padding: 20px;
 `;
 
-
-
+// Main component for handling passphrase generation and input
 export default function UserPassPhraseModel(props) {
+  // State management
   const [showModal, setShowModal] = useState(false);
-
   const [nextButtonEnable, setNextButtonEnable] = useState(false);
-
   const [copyValue, setCopyValue] = useState("Copy");
-
   const [generatedPassphrase, setGeneratedPassphrase] = useState("");
   const [inputPassphrase, setInputpassphrase] = useState("");
-
   const [toggleState, setToggleState] = useState(1);
 
+  // Handle tab switching between generate and enter modes
   const toggleTab = (index) => {
     console.log(index);
-
     if (index === 1) {
       generatePhrase();
     }
-
     setToggleState(index);
   };
 
+  // Generate initial passphrase on component mount
   useEffect(() => {
     let rws = randomWords(16).toString();
     rws = rws.replace(/,/g, " ");
-
     setGeneratedPassphrase(rws);
   }, []);
 
+  // Function to generate new passphrase
   function generatePhrase() {
     let rws = randomWords(16).toString();
     rws = rws.replace(/,/g, " ");
     setGeneratedPassphrase(rws);
   }
 
+  // Handle checkbox state change
   function onChange(e) {
     console.log(`checked = ${e.target.checked}`);
     setNextButtonEnable(e.target.checked);
   }
 
+  // Handle copying passphrase to clipboard
   function handleCopy() {
     setCopyValue("Copied");
-
     var successful = document.execCommand("copy");
     var msg = successful ? "successful" : "unsuccessful";
     console.log("Copying text command was " + msg);
-
     navigator.clipboard.writeText(generatedPassphrase);
-
     setTimeout(() => {
       setCopyValue("Copy");
     }, 2000);
@@ -322,7 +315,7 @@ export default function UserPassPhraseModel(props) {
             <Row3>
               <Row3Title>Save your Encryption Passphrase</Row3Title>
               <Row3Text>
-                You’’ll need this passphrase to access data in your future. This
+                You''ll need this passphrase to access data in your future. This
                 is the only time it will be displayed. Be sure to write it down.
               </Row3Text>{" "}
               <Checkbox onChange={onChange}>
@@ -345,7 +338,6 @@ export default function UserPassPhraseModel(props) {
           </UserpassphraseWrapper>
         </UserpassphraseContainer>
       </Modal>
-      
     </div>
   );
 }
