@@ -1,19 +1,25 @@
+// Import necessary dependencies from React and other libraries
 import React from "react";
 import { useHistory } from "react-router-dom";
 
+// Import icon and layout components
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { Col } from "react-bootstrap";
 
+// GoBackBtn component that provides navigation to previous page
 export default function GoBackBtn(props) {
+  // Get history object for navigation
   let history = useHistory();
 
   return (
+    // Column container with flex layout
     <Col
       style={{
         display: "flex",
         alignItems: "flex-end",
       }}
     >
+      {/* Back arrow icon with click handler */}
       <span
         style={{
           fontSize: "30px",
@@ -26,6 +32,7 @@ export default function GoBackBtn(props) {
       >
         <LeftSquareOutlined />
       </span>
+      {/* "Go Back" text label */}
       <span
         style={{
           flexGrow: "1",
