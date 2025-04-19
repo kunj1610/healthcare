@@ -1,25 +1,28 @@
+// Import necessary React hooks and components
 import React, { useEffect, useState } from "react";
 
+// Import Bootstrap layout components
 import { Container, Row, Col } from "react-bootstrap";
 
-
+// Import ethers library for Ethereum interaction
 import { ethers } from "ethers";
 
+// Import styled-components for custom styling
 import styled from "styled-components";
 
+// Import authentication utilities and routing
 import auth from "../adapters/auth";
 import { useHistory } from "react-router-dom";
 
-// import Identicon from "react-identicons";
-
+// Import Blockies for Ethereum address visualization
 import Blockies from "react-blockies";
-// import { Avatar } from "antd";
 
+// Import Ant Design icons and components
 import { CopyOutlined } from "@ant-design/icons";
-
 import { Typography } from "antd";
 const { Paragraph } = Typography;
 
+// Styled component for the logout button
 const DisconnectBtn = styled.button`
   width: 120px;
   background-color:#16c79a;
@@ -35,23 +38,30 @@ const DisconnectBtn = styled.button`
   }
 `;
 
-
-
+// Account component for displaying user's Ethereum account information
 function Account(props) {
+  // Initialize routing history
   let history = useHistory();
+  
+  // State variables for user account data
   const [userAddress, setUserAddress] = useState("");
   const [connectedToNet, setConnectedToNet] = useState("");
   const [userBalance, setUserBalance] = useState("");
+
+  // Function to fetch and set user's Ethereum account data
   async function getUserData() {
     if (
       typeof window.ethereum !== "undefined" ||
       typeof window.web3 !== "undefined"
     ) {
+      // Initialize Web3 provider and signer
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
+      // Request account access
       await provider.send("eth_requestAccounts", []);
 
+      // Determine connected network based on chainId
       switch (window.ethereum.chainId) {
         case "0x1":
           setConnectedToNet("Ethereum Main Network");
@@ -75,34 +85,28 @@ function Account(props) {
           break;
       }
 
+      // Set user's address and balance
       setUserAddress(await signer.getAddress());
       setUserBalance(ethers.utils.formatEther(await signer.getBalance()));
-
-      // let n = await provider.getNetwork();
-      // let name = n.name;
-      // if (name === "homestead") setConnectedToNet("Ethereum Mainnet");
-      // else {
-      //   setConnectedToNet(
-      //     `${name.charAt(0).toUpperCase() + name.slice(1)} Test Network`
-      //   );
-      // }
-      // setUserBalance(ethers.utils.formatEther(await signer.getBalance()));
-      // setUserAddress(await signer.getAddress());
     }
   }
 
+  // Effect hook to fetch user data on component mount
   useEffect(() => {
     getUserData();
   }, []);
 
+  // Function to handle user logout
   function disconnect() {
     auth.logout(() => {
       history.push("/");
     });
   }
 
+  // Render account information
   return (
     <>
+    {/* Main container for account information */}
     <Container
       style={{
         margin: "20px auto 20px auto",
@@ -114,6 +118,7 @@ function Account(props) {
     >
       <Row>
         <Col>
+          {/* Network connection status */}
           <p
             style={{
               fontSize: "20px",
@@ -131,6 +136,7 @@ function Account(props) {
         </Col>
         <Col>
           <Row>
+            {/* User address blockies and display */}
             <Col style={{ textAlign: "right" }}>
               <Blockies seed={userAddress} size={5} scale={8} />
             </Col>
@@ -139,14 +145,13 @@ function Account(props) {
               <Paragraph
                 copyable={{
                   text: userAddress,
-
                   icon: (
                     <CopyOutlined style={{  color:"#16c79a" }}/>
-                    //style={{ fontSize: "35px", margin: "5px" }}
                   ),
                 }}
                 style={{ fontSize: "20px", color:"grey"}}
               >
+                {/* Display truncated address */}
                 {`${userAddress.substring(0, 9)}...${userAddress.substring(
                   33,
                   42
@@ -155,6 +160,7 @@ function Account(props) {
             </Col>
           </Row>
           <Row>
+            {/* Balance and logout button */}
             <Col>
               <p
                 style={{
@@ -175,8 +181,6 @@ function Account(props) {
         </Col>
       </Row>
     </Container>
-
-  
   </>
   );
 }
