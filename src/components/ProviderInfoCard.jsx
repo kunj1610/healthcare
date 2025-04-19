@@ -1,23 +1,26 @@
+// Import necessary dependencies from React and other libraries
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { ethers } from "ethers";
-import Blockies from "react-blockies";
+import { ethers } from "ethers"; // For Ethereum interactions
+import Blockies from "react-blockies"; // For generating blockchain identicons
 import { CgShutterstock } from "react-icons/cg";
 import { FcPlus } from "react-icons/fc";
 import { CopyOutlined } from "@ant-design/icons";
 import { Typography, Divider, Drawer, message, Spin } from "antd";
-import { db } from "../firebase";
-import Cookies from "js-cookie";
+import { db } from "../firebase"; // Firebase database instance
+import Cookies from "js-cookie"; // For handling cookies
 import InfiniteScroll from "react-infinite-scroller";
 import "../styles/providerInfoCard.css";
 import { query, where, getDocs, addDoc, doc, deleteDoc, collection } from "firebase/firestore";
 
 const { Paragraph } = Typography;
 
+// Component to display and manage list of assigned patients
 function AssignedPatientsList() {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch assigned patients on component mount
   useEffect(() => {
     const fetchAssignedPatients = async () => {
       try {
@@ -38,6 +41,7 @@ function AssignedPatientsList() {
     fetchAssignedPatients();
   }, []);
 
+  // Function to remove patient assignment
   const unassignPatient = async (id) => {
     try {
       await deleteDoc(doc(db, "AssignedPatients", id));
@@ -49,6 +53,7 @@ function AssignedPatientsList() {
     }
   };
 
+  // Render infinite scrolling list of patients
   return (
     <div className="demo-infinite-container">
       <InfiniteScroll initialLoad={false} pageStart={0} hasMore={!loading} useWindow={false}>
@@ -74,13 +79,16 @@ function AssignedPatientsList() {
   );
 }
 
+// Component for assigning new patients via a drawer interface
 function AssignPatientsDrawer({ uid }) {
   const [visible, setVisible] = useState(false);
   const [patientID, setPatientID] = useState("");
 
+  // Drawer visibility handlers
   const showDrawer = () => setVisible(true);
   const onClose = () => setVisible(false);
 
+  // Function to assign a new patient
   const assignPatient = async () => {
     if (!patientID.trim()) {
       message.error("Patient ID cannot be empty");
@@ -104,7 +112,7 @@ function AssignPatientsDrawer({ uid }) {
     }
   };
 
-
+  // Render drawer with patient assignment form
   return (
     <>
       <Button type="primary" onClick={showDrawer} icon={<FcPlus />}>Assign Patients</Button>
@@ -139,9 +147,12 @@ function AssignPatientsDrawer({ uid }) {
     </>
   );
 }
+
+// Main provider info card component
 export default function ProviderInfoCard({ uid, image, name }) {
   const [address, setAddress] = useState("");
 
+  // Get Ethereum address on component mount
   useEffect(() => {
     const getUserData = async () => {
       if (window.ethereum || window.web3) {
@@ -153,6 +164,7 @@ export default function ProviderInfoCard({ uid, image, name }) {
     getUserData();
   }, []);
 
+  // Render provider card with image, name and assign patients functionality
   return (
     <div className="provider-card-container">
       <Row>
