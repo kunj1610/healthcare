@@ -68,6 +68,7 @@ contract DoctorRegistry {
         string memory, string memory, string memory, string memory, string memory, string memory, string memory, bool
     ) {
         // Get doctor details from mapping
+        // Get all the details
         Doctor memory doc = doctors[_doctorAddress];
         // Verify doctor exists
         require(doc.isRegistered, "Doctor not registered");
