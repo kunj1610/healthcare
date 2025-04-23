@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 // Import Firestore functionality and methods
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
-// Firebase configuration object containing credentials and settings
+// Firebase configuration object containing credentials and settings and the api
 const firebaseConfig = {
   apiKey: "AIzaSyA1E-vptPLqQC1VMUSIjM_hb3VvVb46IMc",
   authDomain: "healthcare-1bf91.firebaseapp.com",
