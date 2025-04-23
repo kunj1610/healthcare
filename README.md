@@ -108,6 +108,12 @@ truffle test
 Tests are located in the `/test/` directory and cover contract logic, permissions, and access control.
 
 ---
+##  Images of the Enhanced version of the Healthcare
+
+ ![about us page](src/assets/images/about.png)
+ ![contact us page ](src/assets/images/contactus.png)
+ ![admin page ](src/assets/images/adminpage.png)
+ ![view record](src/assets/images/viewrecord.png)
 
 ##  Future Improvements
 
