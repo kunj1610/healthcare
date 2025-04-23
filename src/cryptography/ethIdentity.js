@@ -2,7 +2,7 @@ import EthCrypto from "eth-crypto";
 
 import { generateSymKey } from "./generatekeys";
 
-// ? Generate Public Key, Private Key, Symmetric Key and an Address
+// ? Generate Public Key, Private Key, Symmetric Key and an Address of the key
 function newIdentity(password, keySize) {
   const identity = EthCrypto.createIdentity();
   const symmetricKey = generateSymKey(password, keySize);
