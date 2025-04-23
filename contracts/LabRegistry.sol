@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 // Contract to manage laboratory registration and details
 contract LabRegistry {
     // Structure to store laboratory information
+    // store the all information 
     struct Lab {
         string fullName;      // Full name of the laboratory
         string association;   // Associated organization/institution
