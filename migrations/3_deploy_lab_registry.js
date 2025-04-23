@@ -1,4 +1,4 @@
-// Import the LabRegistry contract artifact
+// Import the LabRegistry contract artifact.
 const LabRegistry = artifacts.require("LabRegistry");
 
 // Export the deployment function
