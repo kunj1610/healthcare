@@ -32,6 +32,8 @@ This project is a **decentralized healthcare platform** built on blockchain tech
 
 ---
 
+![Ganache ](src/assets/images/Ganache.png)
+
 ##  Project Structure
 
 ```
@@ -47,13 +49,6 @@ healthcare/
 
 ---
 
-##  Screenshots *(Optional - Add images to enhance appeal)*
-
-<!-- Uncomment after adding images to `src/assets/images/` -->
-<!--
-![Dashboard](./src/assets/images/dashboard.png)
-*Patient Dashboard displaying decentralized record access.*
--->
 
 ---
 
@@ -65,7 +60,7 @@ healthcare/
 - Truffle Suite (`npm install -g truffle`)
 - Ganache CLI or Ganache GUI
 
-### 🔧 Installation & Deployment
+###  Installation & Deployment
 
 1. **Clone the repository**
    ```bash
