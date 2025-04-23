@@ -1,4 +1,4 @@
-// Import the DoctorRegistry contract artifact
+// Import the DoctorRegistry contract artifact.
 const DoctorRegistry = artifacts.require("DoctorRegistry");
 
 // Export the deployment function
