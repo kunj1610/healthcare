@@ -9,5 +9,5 @@ const s3 = new S3({
   s3ForcePathStyle: true, // Force path-style addressing
   signatureVersion: "v4", // Use AWS Signature Version 4 for requests
   connectTimeout: 0, // No timeout limit for connections
-  httpOptions: { timeout: 0 }, // No timeout limit for HTTP requests
+  httpOptions: { timeout: 0 }, // No timeout limit for HTTP requests for perform
 });
