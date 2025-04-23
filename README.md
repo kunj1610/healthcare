@@ -1,6 +1,6 @@
-# 🏥 Decentralized Healthcare Application
+#  Decentralized Healthcare Application
 
-## 📘 Overview
+##  Overview
 
 This project is a **decentralized healthcare platform** built on blockchain technology, designed to securely manage patient records and healthcare-related transactions. By integrating **Ethereum smart contracts** with a modern **React.js frontend**, the system aims to provide a transparent, tamper-proof, and efficient digital healthcare solution.
 
@@ -8,17 +8,17 @@ This project is a **decentralized healthcare platform** built on blockchain tech
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-- 🔐 **Smart Contracts** – Written in Solidity to manage patient records, provider access, and transactions without intermediaries.
-- 🌐 **Blockchain Integration** – All data interactions are handled via the Ethereum blockchain, ensuring transparency and decentralization.
-- ⚙️ **Truffle Suite** – Used for smart contract development, automated testing, and blockchain deployment.
-- 💻 **Interactive Frontend** – Built with React.js to offer a responsive, intuitive interface for patients and providers.
-- 🔄 **Local Development Blockchain** – Powered by Ganache for fast, local testing of contract interactions.
+-  **Smart Contracts** – Written in Solidity to manage patient records, provider access, and transactions without intermediaries.
+-  **Blockchain Integration** – All data interactions are handled via the Ethereum blockchain, ensuring transparency and decentralization.
+-  **Truffle Suite** – Used for smart contract development, automated testing, and blockchain deployment.
+-  **Interactive Frontend** – Built with React.js to offer a responsive, intuitive interface for patients and providers.
+-  **Local Development Blockchain** – Powered by Ganache for fast, local testing of contract interactions.
 
 ---
 
-## 🧰 Technologies Used
+##  Technologies Used
 
 | Layer            | Technology            |
 |------------------|------------------------|
@@ -29,7 +29,7 @@ This project is a **decentralized healthcare platform** built on blockchain tech
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 healthcare/
@@ -44,7 +44,7 @@ healthcare/
 
 ---
 
-## 📸 Screenshots *(Optional - Add images to enhance appeal)*
+##  Screenshots *(Optional - Add images to enhance appeal)*
 
 <!-- Uncomment after adding images to `src/assets/images/` -->
 <!--
@@ -54,9 +54,9 @@ healthcare/
 
 ---
 
-## 🛠️ Getting Started
+##  Getting Started
 
-### ✅ Prerequisites
+###  Prerequisites
 
 - Node.js and npm
 - Truffle Suite (`npm install -g truffle`)
@@ -92,7 +92,7 @@ healthcare/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 To run contract tests using Truffle:
 
@@ -104,29 +104,29 @@ Tests are located in the `/test/` directory and cover contract logic, permission
 
 ---
 
-## 🚧 Future Improvements
+##  Future Improvements
 
-- 🔍 **IPFS Integration** for decentralized file storage (e.g., scan reports, X-rays)
-- 📱 **Mobile Responsiveness** using React Native
-- 📊 **Analytics Dashboard** for tracking health trends
-- 🛡️ **Zero-Knowledge Proofs** for privacy-preserving queries
-- 🧾 **PDF Reports** generation for patient summaries
+-  **IPFS Integration** for decentralized file storage (e.g., scan reports, X-rays)
+-  **Mobile Responsiveness** using React Native
+-  **Analytics Dashboard** for tracking health trends
+-  **Zero-Knowledge Proofs** for privacy-preserving queries
+-  **PDF Reports** generation for patient summaries
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, feedback, and suggestions are welcome! Feel free to fork the project and submit a pull request.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙋‍♂️ Author
+##  Author
 
 **Kunj Patel**  
 GitHub: [kunj1610](https://github.com/kunj1610)  
