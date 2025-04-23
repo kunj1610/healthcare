@@ -3,7 +3,7 @@ import CryptoJS from "crypto-js";
 
 import { JsonFormatter } from "./jsonFormatter";
 
-// ? Decrypt Symmetric Key with Private Key
+// ? Decrypt Symmetric Key with Private Key with crypto
 async function decryptSymKeyWithPrivateKey(privateKey, encryptedData) {
   const decryptedSymmKey = await EthCrypto.decryptWithPrivateKey(
     privateKey,
