@@ -8,7 +8,7 @@ import "antd/dist/antd.css";
 // Import main App component
 import App from "./App";
 
-// Import and configure dotenv for environment variables
+// Import and configure dotenv for environment variables with config 
 import dotenv from "dotenv";
 dotenv.config();
 
