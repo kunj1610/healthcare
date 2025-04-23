@@ -29,7 +29,7 @@ export const getFromIPFS = async (hashToGet) => {
     for await (const chunk of data.content) {
       content.append(chunk);
     }
-    // Log and return the assembled content as string
+    // Log and return the assembled content as string or console 
     console.log(content.toString());
     return content.toString();
   }
