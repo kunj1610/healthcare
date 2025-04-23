@@ -85,7 +85,7 @@ export async function londonHospitalIssueAdminID(formData) {
   return result;
 }
 
-// ! Bolton Research Institute
+// ! Bolton Research Institute and ID
 export async function boltonResearchInstituteIssueEntityID(formData) {
   let params = {
     definitionId:
