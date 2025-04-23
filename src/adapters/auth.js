@@ -21,5 +21,5 @@ class Auth {
   }
 }
 
-// Singleton Pattern
+// Singleton Pattern export
 export default new Auth();
