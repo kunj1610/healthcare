@@ -3,7 +3,7 @@ import CryptoJS from "crypto-js";
 
 import { JsonFormatter } from "./jsonFormatter";
 
-// ? Encrypt Symmetric Key with Public Key
+// ? Encrypt Symmetric Key with Public Key with crypto
 async function encryptSymKeyWithPublicKey(publicKey, symmetricKey) {
   const encryptedSymmKey = await EthCrypto.encryptWithPublicKey(
     publicKey,
