@@ -13,7 +13,7 @@ function checkForWallet() {
     // Commented out provider detection using the imported utility
     // const provider = await detectEthereumProvider();
     
-    // Check if ethereum object is injected by MetaMask
+    // Check if ethereum object is injected by MetaMask or  not 
     if (typeof window.ethereum !== "undefined") {
       // From now on, this should always be true:
       // provider === window.ethereum
