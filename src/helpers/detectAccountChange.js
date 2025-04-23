@@ -16,7 +16,7 @@ export default function HandleAccountChange() {
         // ? when account changed we logout the current user and redirect home
         auth.logout(() => history.push("/"));
 
-        // TODO maybe reload interface instead of redirecting
+        // TODO maybe reload interface instead of redirecting properly
       }, 5000);
     });
   });
