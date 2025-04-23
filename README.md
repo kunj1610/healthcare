@@ -1,5 +1,7 @@
 #  Decentralized Healthcare Application
 
+[Healthcare App](./src/assets/images/overview.png) 
+
 ##  Overview
 
 This project is a **decentralized healthcare platform** built on blockchain technology, designed to securely manage patient records and healthcare-related transactions. By integrating **Ethereum smart contracts** with a modern **React.js frontend**, the system aims to provide a transparent, tamper-proof, and efficient digital healthcare solution.
