@@ -1,6 +1,7 @@
 #  Decentralized Healthcare Application
 
-[Healthcare App](./src/assets/images/overview.png) 
+![Healthcare App](src/assets/images/overview.png)
+
 
 ##  Overview
 
