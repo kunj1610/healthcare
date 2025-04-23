@@ -2,7 +2,7 @@ import CryptoJS from "crypto-js";
 
 var JsonFormatter = {
   stringify: function (cipherParams) {
-    // create json object with ciphertext
+    // create json object with ciphertext with json
     var jsonObj = { ct: cipherParams.ciphertext.toString(CryptoJS.enc.Base64) };
 
     // optionally add iv or salt
