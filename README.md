@@ -21,15 +21,22 @@ This project is a **decentralized healthcare platform** built on blockchain tech
 
 ---
 
-##  Technologies Used
+##  Tech Stack
+Frontend: React.js, JavaScript, HTML/CSS
 
-| Layer            | Technology            |
-|------------------|------------------------|
-| **Frontend**     | React.js, JavaScript, HTML/CSS |
-| **Blockchain**   | Ethereum, Solidity, Web3.js |
-| **Dev Tools**    | Truffle Suite, Ganache |
-| **Package Manager** | npm (Node.js) |
+Backend: Node.js, Express.js
 
+Blockchain: Ethereum, Solidity, Web3.js
+
+Smart Contracts: Truffle, Ganache
+
+Authentication: Firebase Authentication (for user login and signup)
+
+Database: Firebase Firestore (for storing patient data and records)
+
+Hosting: Firebase Hosting (for hosting the application)
+
+Wallet: MetaMask (for Ethereum interaction)
 ---
 
 ![Ganache ](src/assets/images/Ganache.png)
